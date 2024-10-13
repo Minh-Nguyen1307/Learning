@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
-import ListCourses from './ListCourses/ListCourses'
-
+import React, { useState } from "react";
+import ListCourses from "./1.3.1 ListCourses/ListCourses";
+import { allCourses } from "../../../Data/1. AllCourses/AllCourses";
 
 export default function TopCourses() {
-    const [allCourses, setAllCourses] = useState(allCourses)
-
+  const [topCourses, setTopCourses] = useState(allCourses);
+  
 
   return (
     <div>
-        <ListCourses allCourses={allCourses.slide(0,2)}/>
+      <ListCourses topCourses={topCourses.slice(0, 4)} />
     </div>
-  )
+  );
 }

@@ -27,10 +27,10 @@ export default function Header() {
           </form>
         </div>
         <div className='w-1/12 flex justify-between'>
-          <Link to='/'>
-            <button className='btn btn-light border p-2'>Log in</button>
+          <Link to='/LogIn'>
+            <button className='btn btn-dark border p-2'>Log in</button>
           </Link>
-          <Link to='/'>
+          <Link to='/SignUp'>
             <button className='btn btn-success border bg-emerald-800 p-2'>
               Sign up
             </button>
