@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
+
 
 export default function LogIn() {
   const [errorLogIn, setErrorLogIn] = useState("");
-  const navigate = useNavigate();
+ 
   const [formValue, setFormValue] = useState({
     email: "",
     password: "",
@@ -22,8 +22,9 @@ export default function LogIn() {
         storedUser.email === email && storedUser.password === password
     );
     if (storedUser) {
+      localStorage.setItem('loggedInUser', JSON.stringify(storedUser));
       alert("Successfully logged in!");
-      navigate("/");
+      window.location.href = '/';
       setErrorLogIn("");
     }
     setErrorLogIn("Incorrect email or password.");

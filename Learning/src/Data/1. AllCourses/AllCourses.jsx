@@ -14,7 +14,7 @@ export const allCourses = [
     {
         id: uuidv4(),
         imageCourse: '4. Course/Courses.png',
-        title: "Intermediate Design Techniques",
+        title: "Intermediate Design",
         author: 'By Jane Doe',
         rating: '850',
         content: '200 Lectures. Intermediate',

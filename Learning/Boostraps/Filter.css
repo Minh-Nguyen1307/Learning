@@ -1,0 +1,15 @@
+.accordion-button {
+    background-color: #A0AEC0; /* Light gray background */
+    color: #2D3748; /* Dark gray text */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .accordion-button:hover {
+    background-color: #718096; /* Medium gray on hover */
+  }
+  
+  .accordion-body {
+    background-color: #EDF2F7; /* Lighter gray background */
+    color: #4A5568; /* Darker gray text */
+  }
+  
