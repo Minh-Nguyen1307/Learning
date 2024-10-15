@@ -3,17 +3,18 @@ import { v4 as uuidv4 } from 'uuid';
 export const allCourses = [
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Beginner's Guide to Design",
         author: 'By Ronald Richards',
         rating: '1200',
         content: '155 Lectures. Beginner',
         cost: ' 149.9',
         intro: 'This course is meticulously crafted to provide you with a foundational understanding of the principles, methodologies, and tools that drive exceptional user experiences in the digital landscape.'
+        
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Intermediate Design",
         author: 'By Jane Doe',
         rating: '850',
@@ -23,7 +24,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Advanced UX UI Design",
         author: 'By John Smith',
         rating: '600',
@@ -33,7 +34,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Web Development Bootcamp",
         author: 'By Emily Johnson',
         rating: '1400',
@@ -43,7 +44,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "JavaScript Essentials",
         author: 'By Michael Brown',
         rating: '950',
@@ -53,7 +54,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "React for Beginners",
         author: 'By Sarah Lee',
         rating: '1100',
@@ -63,7 +64,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Mastering CSS",
         author: 'By David Williams',
         rating: '700',
@@ -73,7 +74,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Python Programming 101",
         author: 'By Laura Kim',
         rating: '1600',
@@ -83,7 +84,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Full-Stack Developer Course",
         author: 'By Chris Evans',
         rating: '2000',
@@ -93,7 +94,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Graphic Design Masterclass",
         author: 'By Anna Thompson',
         rating: '800',
@@ -103,7 +104,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Digital Marketing Basics",
         author: 'By Daniel Martinez',
         rating: '1300',
@@ -113,7 +114,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Data Science with Python",
         author: 'By Olivia Adams',
         rating: '1500',
@@ -123,7 +124,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Introduction to AI and Machine Learning",
         author: 'By Jessica Green',
         rating: '1000',
@@ -133,7 +134,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Cloud Computing Essentials",
         author: 'By Robert White',
         rating: '900',
@@ -143,7 +144,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "SEO for Beginners",
         author: 'By Alice Brown',
         rating: '1100',
@@ -153,7 +154,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Introduction to Blockchain Technology",
         author: 'By Charlie Black',
         rating: '750',
@@ -163,7 +164,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Advanced Excel Skills",
         author: 'By Emily Davis',
         rating: '950',
@@ -173,7 +174,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Data Analysis and Visualization",
         author: 'By Mark Taylor',
         rating: '800',
@@ -183,7 +184,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Introduction to Cybersecurity",
         author: 'By Anna Wilson',
         rating: '1200',
@@ -193,7 +194,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Project Management Essentials",
         author: 'By Paul Johnson',
         rating: '950',
@@ -203,7 +204,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Introduction to Game Development",
         author: 'By Tim Allen',
         rating: '1100',
@@ -213,7 +214,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Photography Basics",
         author: 'By Rachel Adams',
         rating: '1000',
@@ -223,7 +224,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Beginner's Guide to Design",
         author: 'By Ronald Richards',
         rating: '1200',
@@ -233,7 +234,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Intermediate Design",
         author: 'By Jane Doe',
         rating: '850',
@@ -243,7 +244,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Advanced UX UI Design",
         author: 'By John Smith',
         rating: '600',
@@ -253,7 +254,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Beginner's Guide to Design",
         author: 'By Ronald Richards',
         rating: '1200',
@@ -263,7 +264,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Intermediate Design",
         author: 'By Jane Doe',
         rating: '850',
@@ -273,7 +274,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Advanced UX UI Design",
         author: 'By John Smith',
         rating: '600',
@@ -283,7 +284,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Web Development Bootcamp",
         author: 'By Emily Johnson',
         rating: '1400',
@@ -293,7 +294,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "JavaScript Essentials",
         author: 'By Michael Brown',
         rating: '950',
@@ -303,7 +304,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Python Programming 101",
         author: 'By Laura Kim',
         rating: '1600',
@@ -313,7 +314,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Full-Stack Developer Course",
         author: 'By Chris Evans',
         rating: '2000',
@@ -323,7 +324,7 @@ export const allCourses = [
     },
     {
         id: uuidv4(),
-        imageCourse: '4. Course/Courses.png',
+        imageCourse: '/Courses.png',
         title: "Graphic Design Masterclass",
         author: 'By Anna Thompson',
         rating: '800',

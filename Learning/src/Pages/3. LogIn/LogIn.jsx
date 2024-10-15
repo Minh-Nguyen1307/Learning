@@ -1,35 +1,49 @@
 import React, { useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { useCart } from "../../CartContext";
 
 export default function LogIn() {
   const [errorLogIn, setErrorLogIn] = useState("");
- 
+  const { resetCart, addToCart } = useCart();
   const [formValue, setFormValue] = useState({
     email: "",
     password: "",
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   };
+
   const handleForm = (e) => {
     e.preventDefault();
+    const { email, password } = formValue; 
+
     const storedUsers = JSON.parse(localStorage.getItem("userDetails")) || [];
     const storedUser = storedUsers.find(
-      (storedUser) =>
-        storedUser.email === email && storedUser.password === password
+      (user) => user.email === email && user.password === password
     );
+
     if (storedUser) {
-      localStorage.setItem('loggedInUser', JSON.stringify(storedUser));
-      alert("Successfully logged in!");
+      localStorage.setItem("loggedInUser", JSON.stringify(storedUser));
+      
+      resetCart();
+
+      
+      const userCart = storedUser.cart || [];
+      userCart.forEach((item) => addToCart(item));
+
+      
       window.location.href = '/';
-      setErrorLogIn("");
+      setErrorLogIn(""); 
+    } else {
+      setErrorLogIn("Incorrect email or password.");
     }
-    setErrorLogIn("Incorrect email or password.");
   };
+
   const { email, password } = formValue;
+
   return (
     <div className='row no-gutters'>
       <div className='col-12 col-sm-6 col-md-8 d-flex flex-col items-center'>
