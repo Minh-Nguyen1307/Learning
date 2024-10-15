@@ -8,7 +8,7 @@ export default function Footer() {
         <div className='mx-10 d-flex justify-between items-start text-white h-40 font-extralight w-full '>
           <div className='w-1/3'>
             <Link to='/'>
-              <img src='2. Footer/Logo.png' alt='Logo of Byway' className="my-2" />
+              <img src='/Logo.png' alt='Logo of Byway' className="my-2" />
             </Link>
             <p>
               Empowering learners through accessible and engaging online
@@ -39,7 +39,7 @@ export default function Footer() {
             <p>Tel: +(123)456-7890</p>
             <p>Mail: bywayedu@webkul.in</p>
             <span>
-              <img src=' 2. Footer/Social.png' alt='Social icons' className="my-2" />
+              <img src=' /Social.png' alt='Social icons' className="my-2" />
             </span>
           </div>
         </div>

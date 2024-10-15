@@ -220,5 +220,115 @@ export const allCourses = [
         content: '120 Lectures. Beginner',
         cost: ' 129.9',
         intro: 'Learn the foundational skills of photography, including composition, lighting, and editing techniques.'
-    }
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Beginner's Guide to Design",
+        author: 'By Ronald Richards',
+        rating: '1200',
+        content: '155 Lectures. Beginner',
+        cost: ' 149.9',
+        intro: 'This course is meticulously crafted to provide you with a foundational understanding of the principles, methodologies, and tools that drive exceptional user experiences in the digital landscape.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Intermediate Design",
+        author: 'By Jane Doe',
+        rating: '850',
+        content: '200 Lectures. Intermediate',
+        cost: ' 199.9',
+        intro: 'This course focuses on enhancing your design skills through hands-on projects and real-world applications, preparing you for intermediate challenges in design.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Advanced UX UI Design",
+        author: 'By John Smith',
+        rating: '600',
+        content: '250 Lectures. Advanced',
+        cost: ' 249.9',
+        intro: 'Explore advanced topics in UX/UI design, including user research, prototyping, and usability testing to create highly effective digital products.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Beginner's Guide to Design",
+        author: 'By Ronald Richards',
+        rating: '1200',
+        content: '155 Lectures. Beginner',
+        cost: '149.9',
+        intro: 'This course is meticulously crafted to provide you with a foundational understanding of the principles, methodologies, and tools that drive exceptional user experiences in the digital landscape.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Intermediate Design",
+        author: 'By Jane Doe',
+        rating: '850',
+        content: '200 Lectures. Intermediate',
+        cost: '199.9',
+        intro: 'This course focuses on enhancing your design skills through hands-on projects and real-world applications, preparing you for intermediate challenges in design.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Advanced UX UI Design",
+        author: 'By John Smith',
+        rating: '600',
+        content: '250 Lectures. Advanced',
+        cost: '249.9',
+        intro: 'Explore advanced topics in UX/UI design, including user research, prototyping, and usability testing to create highly effective digital products.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Web Development Bootcamp",
+        author: 'By Emily Johnson',
+        rating: '1400',
+        content: '300 Lectures. Beginner to Advanced',
+        cost: '299.9',
+        intro: 'A comprehensive bootcamp that covers front-end and back-end development, enabling you to build and deploy fully functional web applications.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "JavaScript Essentials",
+        author: 'By Michael Brown',
+        rating: '950',
+        content: '150 Lectures. Beginner',
+        cost: '179.9',
+        intro: 'Master the fundamentals of JavaScript, the language of the web, with this introductory course designed for complete beginners.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Python Programming 101",
+        author: 'By Laura Kim',
+        rating: '1600',
+        content: '220 Lectures. Beginner',
+        cost: '209.9',
+        intro: 'An entry-level course designed to introduce you to Python programming and its applications in data analysis and web development.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Full-Stack Developer Course",
+        author: 'By Chris Evans',
+        rating: '2000',
+        content: '350 Lectures. Beginner to Advanced',
+        cost: '349.9',
+        intro: 'Become a full-stack developer by learning both front-end and back-end technologies and frameworks.'
+    },
+    {
+        id: uuidv4(),
+        imageCourse: '4. Course/Courses.png',
+        title: "Graphic Design Masterclass",
+        author: 'By Anna Thompson',
+        rating: '800',
+        content: '280 Lectures. Advanced',
+        cost: '259.9',
+        intro: 'Master the art of graphic design, from conceptualization to execution, through practical projects and critiques.'
+    },
 ];

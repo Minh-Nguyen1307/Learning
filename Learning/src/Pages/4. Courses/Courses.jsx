@@ -14,15 +14,14 @@ export default function Courses() {
   const [currentPage, setCurrentPage] = useState(1);
   const coursesPerPage = 8;
   const [costFilter, setCostFilter] = useState("none");
-  const [relevanceFilter, setRelevanceFilter] = useState("all");
+  const [relevanceFilters, setRelevanceFilters] = useState([]);
 
   const filteredCourses = allCourse
     .filter((course) => {
-      if (
-        relevanceFilter !== "all" &&
-        !course.content.toLowerCase().includes(relevanceFilter)
-      ) {
-        return false;
+      if (relevanceFilters.length > 0) {
+        return relevanceFilters.some((filter) =>
+          course.content.toLowerCase().includes(filter)
+        );
       }
       return true;
     })
@@ -61,6 +60,22 @@ export default function Courses() {
     }
   };
 
+  const handleCostFilterChange = (filter) => {
+    setCostFilter(filter);
+    setCurrentPage(1);
+  };
+
+  const handleRelevanceFilterChange = (filter) => {
+    setRelevanceFilters((prevFilters) => {
+      if (prevFilters.includes(filter)) {
+        return prevFilters.filter((f) => f !== filter);
+      } else {
+        return [...prevFilters, filter];
+      }
+    });
+    setCurrentPage(1);
+  };
+
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
@@ -85,11 +100,11 @@ export default function Courses() {
   };
 
   return (
-    <div className='mx-10'>
+    <div className='mx-10 h-[1300px]'>
       <div>
         <p className='text-4xl font-medium my-4'>Design Courses</p>
       </div>
-      <nav aria-label='breadcrumb' className=' text-lg'>
+      <nav aria-label='breadcrumb' className=' text-lg my-5'>
         <ol className='breadcrumb'>
           <li className='breadcrumb-item'>
             <Link to='/'>Home</Link>
@@ -101,7 +116,6 @@ export default function Courses() {
       </nav>
 
       <div className='flex justify-between w-full'>
-       
         <div className='w-1/6 h-10 flex flex-col justify-between'>
           <div className='mr-20 ml-10'>
             <button className='btn btn-dark w-full font-bold mb-4'>
@@ -111,118 +125,87 @@ export default function Courses() {
           </div>
 
           <div className="h-96 flex flex-col justify-between mr-10 ">
-          <div className='mb-4'>
-            <p className='text-sm font-semibold'>Sort by</p>
-            <div className='dropdown-center'>
-              <button
-                className='btn btn-light dropdown-toggle w-full'
-                type='button'
-                data-bs-toggle='dropdown'
-                aria-expanded='false'
-              >
-                {costFilter === "asc"
-                  ? "Price: Low to High"
-                  : costFilter === "desc"
-                  ? "Price: High to Low"
-                  : "Select Price"}
-              </button>
-              <ul className='dropdown-menu'>
-                <li>
-                  <button
-                    className='dropdown-item'
-                    onClick={() => setCostFilter("asc")}
-                  >
-                    <FontAwesomeIcon
-                      icon={faArrowUpWideShort}
-                      className='mx-2'
-                    />
+            <div className='mb-4'>
+              <p className='text-sm font-semibold'>Sort by</p>
+              <div className="text-center bg-gray-100 border mx-14 my-2 font-bold rounded-lg">Price</div>
+              <div>
+                <div className='form-check mb-2'>
+                  <input
+                    className='form-check-input'
+                    type='checkbox'
+                    id='lowToHigh'
+                    onChange={(e) => handleCostFilterChange(e.target.checked ? "asc" : "none")}
+                  />
+                  <label className='form-check-label' htmlFor='lowToHigh'>
+                    <FontAwesomeIcon icon={faArrowUpWideShort} className='mx-2' />
                     Low to High
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className='dropdown-item'
-                    onClick={() => setCostFilter("desc")}
-                  >
-                    <FontAwesomeIcon
-                      icon={faArrowDownShortWide}
-                      className='mx-2'
-                    />
+                  </label>
+                </div>
+                <div className='form-check mb-2'>
+                  <input
+                    className='form-check-input'
+                    type='checkbox'
+                    id='highToLow'
+                    onChange={(e) => handleCostFilterChange(e.target.checked ? "desc" : "none")}
+                  />
+                  <label className='form-check-label' htmlFor='highToLow'>
+                    <FontAwesomeIcon icon={faArrowDownShortWide} className='mx-2' />
                     High to Low
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className='dropdown-item text-center'
-                    onClick={() => setCostFilter("none")}
-                  >
-                    Reset
-                  </button>
-                </li>
-              </ul>
+                  </label>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <p className='text-sm font-semibold mt-32'>Relevance</p>
-            <div className='dropdown-center'>
-              <button
-                className='btn btn-light dropdown-toggle w-full'
-                type='button'
-                data-bs-toggle='dropdown'
-                aria-expanded='false'
-              >
-                {relevanceFilter === "all"
-                  ? "Select Level"
-                  : relevanceFilter.charAt(0).toUpperCase() +
-                    relevanceFilter.slice(1)}
-              </button>
-              <ul className='dropdown-menu'>
-                <li>
-                  <button
-                    className='dropdown-item text-center'
-                    onClick={() => setRelevanceFilter("beginner")}
-                  >
+            <div>
+              <p className='text-sm font-semibold mt-10'>Relevance</p>
+              <div className="text-center bg-gray-100 border mx-14 my-2 font-bold rounded-lg">Level</div>
+              <div>
+                <div className='form-check mb-2'>
+                  <input
+                    className='form-check-input'
+                    type='checkbox'
+                    id='beginner'
+                    onChange={() => handleRelevanceFilterChange("beginner")}
+                  />
+                  <label className='form-check-label' htmlFor='beginner'>
                     Beginner
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className='dropdown-item text-center'
-                    onClick={() => setRelevanceFilter("intermediate")}
-                  >
+                  </label>
+                </div>
+                <div className='form-check mb-2'>
+                  <input
+                    className='form-check-input'
+                    type='checkbox'
+                    id='intermediate'
+                    onChange={() => handleRelevanceFilterChange("intermediate")}
+                  />
+                  <label className='form-check-label' htmlFor='intermediate'>
                     Intermediate
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className='dropdown-item text-center'
-                    onClick={() => setRelevanceFilter("advanced")}
-                  >
+                  </label>
+                </div>
+                <div className='form-check mb-2'>
+                  <input
+                    className='form-check-input'
+                    type='checkbox'
+                    id='advanced'
+                    onChange={() => handleRelevanceFilterChange("advanced")}
+                  />
+                  <label className='form-check-label' htmlFor='advanced'>
                     Advanced
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className='dropdown-item text-center'
-                    onClick={() => setRelevanceFilter("all")}
-                  >
-                    All Levels
-                  </button>
-                </li>
-              </ul>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        </div>
+
         <div className='w-5/6 rounded-xl border p-4'>
           <div className='grid grid-cols-4 gap-5'>{listAllCourses}</div>
 
           {filteredCourses.length > coursesPerPage && (
-            <div className='d-flex justify-center mt-3'>
+            <div className='d-flex justify-center mt-14 '>
               <nav aria-label='Page navigation example'>
-                <ul className='pagination'>
-                  <li className='page-item'>
+                <ul className='pagination '>
+                  <li className='page-item '>
                     <button
                       className='page-link'
                       onClick={handlePreviousPage}

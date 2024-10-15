@@ -55,7 +55,7 @@ export default function Header() {
       <div className='mx-10 flex justify-between items-center h-20'>
         <div>
           <Link to='/' className='text-2xl'>
-            <img src='/1. Header/Logo.png' alt='Logo of Byway' className='w-32' />
+            <img src='/Logo1.png' alt='Logo of Byway' className='w-32' />
           </Link>
         </div>
         <div>
