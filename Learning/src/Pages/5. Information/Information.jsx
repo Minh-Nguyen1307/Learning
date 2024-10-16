@@ -17,7 +17,7 @@ export default function Information() {
   };
   const handleAddToCart = () => {
     addToCart(course);
-    navigate('/Cart');
+    
     
   };
   const course = allCourses.find(
@@ -74,7 +74,7 @@ export default function Information() {
                 Add to Cart
               </button>
               <Link to='/Cart'>
-                <button className='btn btn-success w-full p-3'>Buy Now</button>
+                <button className='btn btn-success w-full p-3' onClick={handleAddToCart}>Buy Now</button>
               </Link>
             </div>
           </div>

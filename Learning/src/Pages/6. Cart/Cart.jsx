@@ -28,6 +28,8 @@ export default function Cart() {
       totalPrice * discountAmount
     ).toFixed(2);
     setDiscountedPrice(newDiscountedPrice);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    localStorage.setItem("discountedPrice", newDiscountedPrice);
   }, [cartItems, discountAmount]);
 
   const applyDiscount = () => {
@@ -154,7 +156,7 @@ export default function Cart() {
             }}
           >
             <button className='btn btn-dark w-3/4 mt-5' type='submit'>
-              Checkout <FontAwesomeIcon icon={faArrowRight} className='h-4 mx-2' />
+              Check out <FontAwesomeIcon icon={faArrowRight} className='h-4 mx-2' />
             </button>
           </Link>
         </div>

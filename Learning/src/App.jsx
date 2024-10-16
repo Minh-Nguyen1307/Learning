@@ -10,6 +10,8 @@ import Courses from './Pages/4. Courses/Courses';
 import Information from './Pages/5. Information/Information';
 import { CartProvider } from './CartContext';
 import Cart from './Pages/6. Cart/Cart';
+import Checkout from './Pages/7. Checkout/Checkout';
+import Completion from './Pages/8. Completion/Completion';
 
 function App() {
  
@@ -25,6 +27,8 @@ function App() {
             <Route path="/Courses" element={<Courses />} />
             <Route path="/Information/:title" element={<Information />} />
             <Route path="/Cart" element={<Cart />} />
+            <Route path="/Checkout" element={<Checkout />} />
+            <Route path="/Completion" element={<Completion />} />
           </Routes>
         <Footer />
       </Router>

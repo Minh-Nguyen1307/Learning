@@ -73,12 +73,24 @@ export const CartProvider = ({ children }) => {
       }
     }
   };
-
-  const cartCount = cartItems.length;
+  const clearCart = () => {
+    setCartItems([]);
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (loggedInUser) {
+      const storedUsers = JSON.parse(localStorage.getItem("userDetails")) || [];
+      const userIndex = storedUsers.findIndex((user) => user.email === loggedInUser.email);
+  
+      if (userIndex !== -1) {
+       
+        storedUsers[userIndex].cart = [];
+        localStorage.setItem("userDetails", JSON.stringify(storedUsers));
+      }
+    }
+  };
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, cartCount, resetCart }}
+      value={{ cartItems, addToCart, removeFromCart, resetCart, clearCart }}
     >
       {children}
     </CartContext.Provider>
