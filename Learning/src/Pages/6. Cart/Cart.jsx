@@ -155,7 +155,7 @@ export default function Cart() {
               state: { cartItems, discountedPrice },
             }}
           >
-            <button className='btn btn-dark w-3/4 mt-5' type='submit'>
+            <button className='btn btn-dark w-3/4 mt-5' type='submit' >
               Check out <FontAwesomeIcon icon={faArrowRight} className='h-4 mx-2' />
             </button>
           </Link>

@@ -8,7 +8,7 @@ export default function Checkout() {
   const [cartItems, setCartItems] = useState([]);
   const [discountedPrice, setDiscountedPrice] = useState(0);
   const navigate = useNavigate();
-  const { clearCart } = useCart();
+  const { clearCart, removeFromCart } = useCart();
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -37,22 +37,39 @@ export default function Checkout() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
     if (loggedInUser) {
       const existingUserData = JSON.parse(localStorage.getItem('userDetails')) || [];
       const userIndex = existingUserData.findIndex(user => user.id === loggedInUser.id);
 
       if (userIndex !== -1) {
-        
         const user = existingUserData[userIndex];
-        user.myCourse = user.myCourse ? [...user.myCourse, ...cartItems] : [...cartItems];
+        const existingCourses = user.myCourse || [];
 
+      
+        const duplicates = cartItems.filter(cartItem =>
+          existingCourses.some(course => course.id === cartItem.id)
+        );
+
+        
+        duplicates.forEach(duplicate => {
+          removeFromCart(duplicate.id);
+        });
+
+     
+        if (duplicates.length > 0) {
+          alert("Some courses in your cart have already been purchased and have been removed from your cart.");
+          navigate('/Cart'); 
+          return; 
+        }
+
+        user.myCourse = user.myCourse ? [...user.myCourse, ...cartItems] : [...cartItems];
         localStorage.setItem('userDetails', JSON.stringify(existingUserData));
       }
     }
 
     clearCart();
-    navigate('/Completion');
-  };
+    navigate('/Completion');}
       
   return (
     <div className='mx-5'>
@@ -86,7 +103,7 @@ export default function Checkout() {
             </div>
             <img src="/visa.png" alt="Credit Card Logos" />
           </div>
-          <form className="needs-validation" noValidate >
+          <form className="needs-validation" noValidate onSubmit={handleSubmit} >
             <div className="mb-3">
               <label htmlFor="cardName" className="form-label font-semibold">Name on Card</label>
               <input 
@@ -140,7 +157,7 @@ export default function Checkout() {
               </div>
             </div>
             <div className='flex justify-center p-2'>
-              <button className="btn btn-dark w-1/2" type="submit" onSubmit={handleSubmit}>Pay now <FontAwesomeIcon icon={faArrowRight}/></button>
+              <button className="btn btn-dark w-1/2" type="submit" >Pay now <FontAwesomeIcon icon={faArrowRight}/></button>
             </div>
           </form>
         </div>
