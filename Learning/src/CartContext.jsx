@@ -75,6 +75,9 @@ export const CartProvider = ({ children }) => {
   };
   const clearCart = () => {
     setCartItems([]);
+    localStorage.setItem('cartItems', JSON.stringify([]));
+    localStorage.setItem('discountedPrice', JSON.stringify([]));
+
     const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
     if (loggedInUser) {
       const storedUsers = JSON.parse(localStorage.getItem("userDetails")) || [];
@@ -87,10 +90,10 @@ export const CartProvider = ({ children }) => {
       }
     }
   };
-
+  const cartCount = cartItems.length;
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, resetCart, clearCart }}
+      value={{ cartItems, addToCart, removeFromCart, cartCount, resetCart, clearCart }}
     >
       {children}
     </CartContext.Provider>
