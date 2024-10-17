@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
   faCartPlus,
+  faBook
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../CartContext";
@@ -99,7 +100,9 @@ export default function Header() {
                 </span>
                 )}
               </div>
-
+              <Link to='/MyCourse'><div>
+              <FontAwesomeIcon icon={faBook} className="text-2xl" />
+              </div></Link>
               <div
                 className='user-avatar bg-gray-800 text-white w-10 h-10 flex items-center justify-center rounded-full cursor-pointer'
                 onClick={() => setDropdownVisible(!dropdownVisible)}

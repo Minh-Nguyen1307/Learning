@@ -17,7 +17,7 @@ export default function Completion() {
         <p className='font-bold text-2xl'>Order Complete</p>
         <p>You will receive a confirmation email soon!</p>
       </div>
-      <Link to='/Profile'>
+      <Link to='/MyCourse'>
         <div className='text-center mb-20'>
           <button className='btn btn-success w-1/4'>Learn now</button>
         </div>

@@ -16,28 +16,38 @@ export default function Courses() {
   const [costFilter, setCostFilter] = useState("none");
   const [relevanceFilters, setRelevanceFilters] = useState([]);
 
-  const filteredCourses = allCourse
+ 
+  const parseCost = (cost) => parseFloat(cost.replace(/[^0-9.-]+/g, ""));
+
+
+  const filteredAndSortedCourses = allCourse
     .filter((course) => {
+     
       if (relevanceFilters.length > 0) {
         return relevanceFilters.some((filter) =>
           course.content.toLowerCase().includes(filter)
         );
       }
-      return true;
+      return true; 
     })
     .sort((a, b) => {
+      
+      const costA = parseCost(a.cost);
+      const costB = parseCost(b.cost);
+
       if (costFilter === "asc") {
-        return parseFloat(a.cost.slice(1)) - parseFloat(b.cost.slice(1));
+        return costA - costB; 
       } else if (costFilter === "desc") {
-        return parseFloat(b.cost.slice(1)) - parseFloat(a.cost.slice(1));
+        return costB - costA; 
       }
-      return 0;
+      return 0; 
     });
 
-  const totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
+  const totalPages = Math.ceil(filteredAndSortedCourses.length / coursesPerPage);
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
-  const currentCourses = filteredCourses.slice(
+  
+  const currentCourses = filteredAndSortedCourses.slice(
     indexOfFirstCourse,
     indexOfLastCourse
   );
@@ -73,7 +83,7 @@ export default function Courses() {
         return [...prevFilters, filter];
       }
     });
-    setCurrentPage(1);
+    setCurrentPage(1); 
   };
 
   const handleNextPage = () => {
@@ -132,9 +142,10 @@ export default function Courses() {
                 <div className='form-check mb-2'>
                   <input
                     className='form-check-input'
-                    type='checkbox'
+                    type='radio'
                     id='lowToHigh'
-                    onChange={(e) => handleCostFilterChange(e.target.checked ? "asc" : "none")}
+                    checked={costFilter === "asc"}
+                    onChange={() => handleCostFilterChange("asc")}
                   />
                   <label className='form-check-label' htmlFor='lowToHigh'>
                     <FontAwesomeIcon icon={faArrowUpWideShort} className='mx-2' />
@@ -144,9 +155,10 @@ export default function Courses() {
                 <div className='form-check mb-2'>
                   <input
                     className='form-check-input'
-                    type='checkbox'
+                    type='radio'
                     id='highToLow'
-                    onChange={(e) => handleCostFilterChange(e.target.checked ? "desc" : "none")}
+                    checked={costFilter === "desc"}
+                    onChange={() => handleCostFilterChange("desc")}
                   />
                   <label className='form-check-label' htmlFor='highToLow'>
                     <FontAwesomeIcon icon={faArrowDownShortWide} className='mx-2' />
@@ -201,7 +213,7 @@ export default function Courses() {
         <div className='w-5/6 rounded-xl border p-4'>
           <div className='grid grid-cols-4 gap-5'>{listAllCourses}</div>
 
-          {filteredCourses.length > coursesPerPage && (
+          {filteredAndSortedCourses.length > coursesPerPage && (
             <div className='d-flex justify-center mt-14 '>
               <nav aria-label='Page navigation example'>
                 <ul className='pagination '>
