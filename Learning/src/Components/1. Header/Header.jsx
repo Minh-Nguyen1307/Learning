@@ -10,7 +10,9 @@ import { useCart } from "../../CartContext";
 
 
 
-export default function Header() {
+
+export default function Header({ setSearchKeyword }) {
+ 
   const { cartCount } = useCart();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
@@ -59,7 +61,12 @@ export default function Header() {
   const handleCartClick = () => {
     navigate("/Cart");
   };
-
+  const handleSearchChange = (e) => {
+    setSearchKeyword(e.target.value); 
+    if (e.target.value) {
+      navigate("/Search"); 
+    }
+  };
   return (
     <div className='bg-slate-50'>
       <div className='mx-10 flex justify-between items-center h-20'>
@@ -74,17 +81,15 @@ export default function Header() {
           </Link>
         </div>
         <div className='w-1/2'>
-          <form className='border border-black rounded-lg flex justify-start'>
-            <button type='button'>
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className='ml-2 text-2xl'
-              />
+        <form className='border border-black rounded-lg flex justify-start'>
+            <button type='button' className='flex items-center' onClick={handleSearchChange}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} className='ml-2 text-2xl' />
             </button>
             <input
               type='search'
               placeholder='Search Courses'
               className='w-11/12 border-none focus:outline-none p-2 bg-slate-50'
+              onChange={handleSearchChange}
             />
           </form>
         </div>

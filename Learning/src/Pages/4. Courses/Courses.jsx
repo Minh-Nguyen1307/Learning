@@ -15,6 +15,7 @@ export default function Courses() {
   const coursesPerPage = 8;
   const [costFilter, setCostFilter] = useState("none");
   const [relevanceFilters, setRelevanceFilters] = useState([]);
+  
 
  
   const parseCost = (cost) => parseFloat(cost.replace(/[^0-9.-]+/g, ""));

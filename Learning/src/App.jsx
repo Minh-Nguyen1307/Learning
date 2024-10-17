@@ -3,7 +3,7 @@ import './App.css'
 import Header from './Components/1. Header/Header'
 import Home from './Pages/1. Home/Home'
 import Footer from './Components/2. Footer/Footer';
-
+import React, {useState} from 'react';
 import SignUp from './Pages/2. SignUp/SignUp';
 import LogIn from './Pages/3. LogIn/LogIn';
 import Courses from './Pages/4. Courses/Courses';
@@ -14,15 +14,17 @@ import Checkout from './Pages/7. Checkout/Checkout';
 import Completion from './Pages/8. Completion/Completion';
 import Profile from './Pages/10. Profile/Profile';
 import MyCourse from './Pages/9. myCourses/MyCourse';
+import Search from './Pages/12. Search/Search';
+import CourseInitializer from './Data/1. AllCourses/AllCourses';
 
 
 function App() {
  
-
+  const [searchKeyword, setSearchKeyword] = useState('');
   return (
     <CartProvider>
       <Router>
-        <Header />
+        <Header setSearchKeyword={setSearchKeyword} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/SignUp" element={<SignUp />} />
@@ -34,9 +36,12 @@ function App() {
             <Route path="/Completion" element={<Completion />} />
             <Route path="/Profile" element={<Profile />} />
             <Route path="/MyCourse" element={<MyCourse />} />
+            <Route path="/Search" element={<Search searchKeyword={searchKeyword} />} />
+            
           </Routes>
         <Footer />
       </Router>
+      <CourseInitializer />
     </CartProvider>
   )
 }

@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import React, { useEffect } from 'react';
 
 export const allCourses = [
     {
@@ -333,3 +334,11 @@ export const allCourses = [
         intro: 'Master the art of graphic design, from conceptualization to execution, through practical projects and critiques.'
     },
 ];
+export default function CourseInitializer() {
+    useEffect(() => {
+        
+        localStorage.setItem('allCourses', JSON.stringify(allCourses));
+    }, []);
+
+    return <div>Courses have been initialized and saved to local storage!</div>;
+}
