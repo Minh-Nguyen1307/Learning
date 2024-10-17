@@ -9,9 +9,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../CartContext";
 
 
+
 export default function Header() {
   const { cartCount } = useCart();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   const [firstLetter, setFirstLetter] = useState("");
   const [dropdownVisible, setDropdownVisible] = useState(false);
    
