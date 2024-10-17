@@ -7,7 +7,7 @@ export default function Course(props) {
   return (
     <div className='h-[450px] border-4 rounded-3xl w-full'>
       <div className='d-flex flex-column justify-between items-center my-10 h-96'>
-        <img src={imageCourse} className='w-auto' />
+        <img src={imageCourse} className='w-3/4 h-32' />
         <Link to={`/Information/${encodeURIComponent(title)}`} state={{ title }}>
           <h6 className='text-xl font-semibold text-gray-800 text-center hover:underline'>
             {title}
