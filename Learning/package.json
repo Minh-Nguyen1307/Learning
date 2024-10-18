@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "homepage": "https://<username>.github.io/<repo-name>",
+    "homepage": "https://Minh-Nguyen1307.github.io/Learning",
 "predeploy": "npm run build",
 "deploy": "gh-pages -d build"
 
