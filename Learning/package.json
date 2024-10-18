@@ -8,10 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "homepage": "https://Minh-Nguyen1307.github.io/Learning",
-"predeploy": "npm run build",
-"deploy": "gh-pages -d build"
-
+    "homepage": "https://minh-nguyen1307.github.io/Learning",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
