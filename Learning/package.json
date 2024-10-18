@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://Minh-Nguyen1307.github.io/Learning",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "homepage": "https://minh-nguyen1307.github.io/Learning",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
