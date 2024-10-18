@@ -16,6 +16,7 @@ import Profile from './Pages/10. Profile/Profile';
 import MyCourse from './Pages/9. myCourses/MyCourse';
 import Search from './Pages/12. Search/Search';
 import CourseInitializer from './Data/1. AllCourses/AllCourses';
+import Launch from './Pages/11. Launch/Launch';
 
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
             <Route path="/Profile" element={<Profile />} />
             <Route path="/MyCourse" element={<MyCourse />} />
             <Route path="/Search" element={<Search searchKeyword={searchKeyword} />} />
+            <Route path="/Launch" element={<Launch />} />
+
             
           </Routes>
         <Footer />
